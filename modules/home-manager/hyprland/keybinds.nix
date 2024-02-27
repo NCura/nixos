@@ -30,7 +30,6 @@
         "$mod, J, movefocus, d"
         "$mod, K, movefocus, u"
         "$mod, L, movefocus, r"
-        "$mod, M, exit,"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
@@ -52,13 +51,13 @@
         
         "$mod SHIFT, W, exec, rofi -show window"
         "$mod SHIFT, T, togglefloating,"
-        "$mod SHIFT, M, exit,"
         
         # --------------------------------------------------------
         # MOD + CONTROL
         # --------------------------------------------------------   
         
-        "$mod CONTROL, B, exec, pkill waybar && waybar" 
+        "$mod CONTROL, B, exec, pkill waybar && waybar"
+        "$mod CONTROL, Q, exit,"
       ];
       
       bindm = [

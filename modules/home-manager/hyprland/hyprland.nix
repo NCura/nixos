@@ -1,13 +1,9 @@
 { config, pkgs, inputs, ... }:
 
 let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      eval "$(ssh-agent -s)" > /dev/null
-      ssh-add ~/.ssh/github &> /dev/null
-
-      ${pkgs.waybar}/bin/waybar &
-      sleep 1
-    '';
+  wallpaperPath = "/home/nicolas/nixos/assets/wallpapers/default.jpg";
+  startupScriptPath = ./startup.sh;
+  startupScript = pkgs.writeScriptBin "startup-hyprland" (builtins.readFile startupScriptPath);
 in {
   
   imports = [
@@ -28,8 +24,19 @@ in {
     systemd.enable = true;
 
     settings = {
-      exec-once = ''${startupScript}/bin/start'';
-      monitor = ", preferred, auto, auto";
+      exec-once = ''${startupScript}/bin/startup-hyprland'';
+      monitor = ", 3440x1440@120, auto, auto";
     };
   };
+  
+  home.packages = with pkgs; [
+    hyprpaper
+  ];
+  
+   home.file.".config/hypr/hyprpaper.conf".text = ''
+    preload = ${wallpaperPath}
+    wallpaper = ,${wallpaperPath}
+    splash = false
+    ipc = off
+  '';
 }

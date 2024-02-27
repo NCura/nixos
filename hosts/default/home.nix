@@ -17,12 +17,6 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.gnome.adwaita-icon-theme;
-    size = 24; # or your preferred cursor size
-  };
   
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
@@ -41,6 +35,20 @@
     userDirs = {
         enable = true;
         createDirectories = true;
+    };
+  };
+  
+  xdg.mimeApps = {
+    enable = true;
+    
+    defaultApplications = {
+      "text/html" = "vivaldi-stable.desktop";
+      "x-scheme-handler/http" = "vivaldi-stable.desktop";
+      "x-scheme-handler/https" = "vivaldi-stable.desktop";
+      "x-scheme-handler/about" = "vivaldi-stable.desktop";
+      "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
+      "x-scheme-handler/jetbrains" = "jetbrains-toolbox.desktop";
+      "x-scheme-handler/fleet" = "jetbrains-fleet.desktop";
     };
   };
 }

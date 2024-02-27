@@ -26,5 +26,6 @@
     playerctl
     discord
     whatsapp-for-linux
+    obsidian
   ];
 }

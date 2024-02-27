@@ -10,6 +10,10 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+#    hyprpaper = {
+#      url = "github:hyprwm/hyprpaper";
+#      inputs.nixpkgs.follows = "nixpkgs";
+#    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -22,7 +26,6 @@
     pkgs = nixpkgs.legacyPackages.${system};
    in
    {
-
      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
        specialArgs = { inherit inputs; };
        modules = [
@@ -30,6 +33,5 @@
 	     inputs.home-manager.nixosModules.default
        ];
      };
-
    };
 }

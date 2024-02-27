@@ -4,6 +4,7 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "freeimage-unstable-2021-11-01"
+    "electron-25.9.0"
   ];
   
   # To search, run: nix search wget
