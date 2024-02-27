@@ -1,16 +1,17 @@
 { config, pkgs, lib, inputs, ... }:
 
-{
+{  
+  programs.home-manager.enable = true;  
+  home.stateVersion = "23.11";
   home.username = "nicolas";
   home.homeDirectory = "/home/nicolas";
-  home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-      ./../../modules/home-manager/packages.nix
-      ./../../modules/home-manager/files.nix
       ./../../modules/home-manager/hyprland/hyprland.nix
       ./../../modules/home-manager/waybar/waybar.nix
+      ./../../modules/home-manager/files.nix
       ./../../modules/home-manager/kitty.nix
+      ./../../modules/home-manager/packages.nix
   ];
 
   home.sessionVariables = {
@@ -35,6 +36,11 @@
     userName = "Nicolas Cura";
     userEmail = "nicolas.cura@icloud.com";
   };
-  
-  programs.home-manager.enable = true;  
+    
+  xdg = {
+    userDirs = {
+        enable = true;
+        createDirectories = true;
+    };
+  };
 }

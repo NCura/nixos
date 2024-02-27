@@ -13,5 +13,6 @@ let
   '';
 in {
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
+  boot.kernelParams = [ "amdgpu.dc=1" ];
   services.udev.extraRules = pkgs.lib.readFile "${openrgb-rules}/60-openrgb.rules";
 }

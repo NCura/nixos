@@ -5,85 +5,47 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./../../modules/nixos/main-user.nix
-      ./../../modules/nixos/aliases.nix
-      ./../../modules/nixos/session-variables.nix
-      ./../../modules/nixos/openrgb.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  system.stateVersion = "23.11";
   
-  virtualisation.libvirtd = {
-    enable = true;
-    onShutdown = "suspend";
-    onBoot = "ignore";
-    qemu = {
-      package = pkgs.qemu_kvm;
-      ovmf.enable = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
-      swtpm.enable = true;
-      runAsRoot = false;
-    };
-  };
-
-  environment.etc = {
-    "ovmf/edk2-x86_64-secure-code.fd" = {
-      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-x86_64-secure-code.fd";
-    };
-  
-    "ovmf/edk2-i386-vars.fd" = {
-      source = config.virtualisation.libvirtd.qemu.package + "/share/qemu/edk2-i386-vars.fd";
-    };
-  };
-
-  programs.virt-manager.enable = true;
-
-  programs.steam = {
-  	enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-  };
+  imports = [
+    ./hardware-configuration.nix
+    ./../../modules/nixos/aliases.nix
+    ./../../modules/nixos/bluetooth.nix
+    ./../../modules/nixos/internationalisation.nix
+    ./../../modules/nixos/main-user.nix
+    ./../../modules/nixos/openrgb.nix
+    ./../../modules/nixos/session-variables.nix
+    ./../../modules/nixos/steam.nix
+    ./../../modules/nixos/system-packages.nix
+    ./../../modules/nixos/virtualization.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelParams = [ "amdgpu.dc=1" ]; # For OpenRGB
   boot.kernelModules = [ "kvm-amd" ];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   security.sudo.wheelNeedsPassword = false;
 
+  networking.networkmanager.enable = true;
   networking.hostName = "nixos";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Paris";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.UTF-8";
-    LC_IDENTIFICATION = "fr_FR.UTF-8";
-    LC_MEASUREMENT = "fr_FR.UTF-8";
-    LC_MONETARY = "fr_FR.UTF-8";
-    LC_NAME = "fr_FR.UTF-8";
-    LC_NUMERIC = "fr_FR.UTF-8";
-    LC_PAPER = "fr_FR.UTF-8";
-    LC_TELEPHONE = "fr_FR.UTF-8";
-    LC_TIME = "fr_FR.UTF-8";
-  };
-
-  # Configure keymap in X11
-  services.xserver = {
-    videoDrivers = ["amdgpu"];
-    xkb.layout = "es";
-    xkb.variant = "";
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+#        substituters = ["https://hyprland.cachix.org"];
+#        trusted-public-keys = [
+#          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+#        ];
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
   home-manager = {
@@ -98,46 +60,4 @@
     extraPackages = [ pkgs.amdvlk ];
     extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
   };
-  
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-  };
-  hardware.pulseaudio.extraConfig = "
-    load-module module-switch-on-connect
-  ";
-  services.blueman.enable = true;
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "Source,Sink,Media,Socket";
-    };
-  };
-  
-  # Configure console keymap
-  console.keyMap = "es";
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "nicolas";
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "freeimage-unstable-2021-11-01"
-  ];
-  # xdg.portal.wlr.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-   vim
-   neovim
-   micro
-   wget
-   git
-   eza
-  ];
-
-  system.stateVersion = "23.11"; # Did you read the comment?
 }

@@ -13,5 +13,7 @@
       extraGroups = [ "networkmanager" "wheel" "libvirtd" "qemu-libvirtd" "libvirt" "kvm" ];
       packages = [];
     };
+
+    services.getty.autologinUser = "nicolas";  
   };
 }

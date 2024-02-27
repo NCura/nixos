@@ -13,11 +13,11 @@
     imv
     gimp
     pavucontrol
-    font-awesome
+#    font-awesome
     spotify
     neovide
     rustup
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+#    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 	  openrgb-with-all-plugins
     gnome.adwaita-icon-theme
     jetbrains-toolbox
