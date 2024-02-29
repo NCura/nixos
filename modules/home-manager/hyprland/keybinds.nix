@@ -51,6 +51,7 @@
         
         "$mod SHIFT, W, exec, rofi -show window"
         "$mod SHIFT, T, togglefloating,"
+        "$mod SHIFT, B, exec, vivaldi --incognito"
         
         # --------------------------------------------------------
         # MOD + CONTROL

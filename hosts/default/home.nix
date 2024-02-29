@@ -1,19 +1,17 @@
-{ config, pkgs, lib, inputs, ... }:
-
-{  
-  programs.home-manager.enable = true;  
-  home.stateVersion = "23.11";
-  home.username = "nicolas";
-  home.homeDirectory = "/home/nicolas";
-
+{ config, pkgs, lib, inputs, ... }: {
   imports = [
       ./../../modules/home-manager/hyprland/hyprland.nix
       ./../../modules/home-manager/waybar/waybar.nix
+      ./../../modules/home-manager/bash.nix
       ./../../modules/home-manager/files.nix
       ./../../modules/home-manager/kitty.nix
       ./../../modules/home-manager/packages.nix
   ];
 
+  programs.home-manager.enable = true;
+  home.stateVersion = "23.11";
+  home.username = "nicolas";
+  home.homeDirectory = "/home/nicolas";
   home.sessionVariables = {
     # EDITOR = "emacs";
   };

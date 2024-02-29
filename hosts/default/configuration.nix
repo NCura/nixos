@@ -2,24 +2,23 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, inputs, ... }:
-
-{
-  system.stateVersion = "23.11";
-  
+{ config, pkgs, lib, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./../../modules/nixos/aliases.nix
+    ./../../modules/nixos/audio.nix
     ./../../modules/nixos/bluetooth.nix
     ./../../modules/nixos/internationalisation.nix
     ./../../modules/nixos/main-user.nix
-    ./../../modules/nixos/openrgb.nix
+    # ./../../modules/nixos/openrgb.nix
     ./../../modules/nixos/session-variables.nix
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/system-packages.nix
     ./../../modules/nixos/virtualization.nix
     inputs.home-manager.nixosModules.default
   ];
+
+  system.stateVersion = "23.11";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -46,12 +45,6 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = { "nicolas" = import ./home.nix; };
-    useGlobalPkgs = true;
   };
 
   hardware.opengl = {

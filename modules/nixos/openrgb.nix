@@ -12,6 +12,7 @@ let
     substituteInPlace $out/60-openrgb.rules --replace "/bin/chmod" "${pkgs.coreutils}/bin/chmod"
   '';
 in {
+	environment.systemPackages = with pkgs; [ openrgb-with-all-plugins ];
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
   boot.kernelParams = [ "amdgpu.dc=1" ];
   services.udev.extraRules = pkgs.lib.readFile "${openrgb-rules}/60-openrgb.rules";

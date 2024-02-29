@@ -11,9 +11,12 @@
   environment.systemPackages = with pkgs; [
    vim neovim micro
    wget curl git
-   eza
+   eza fzf atuin bat
+   btop htop glances
    wl-clipboard
    lm_sensors
+   liquidctl
+   neofetch
 #   noto-fonts-color-emoji
 #   material-icons
   ];
