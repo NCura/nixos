@@ -1,40 +1,55 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  home.packages = with pkgs; [
+{pkgs, ...}: let
+  browsers = with pkgs; [
     vivaldi
     firefox
-    qutebrowser
     chromium
     opera
-    libvirt
-    swww
-    grim
-    slurp
+  ];
+
+  ides = with pkgs; [
+    vscode
+    sublime4
+  ];
+
+  myPrograms = with pkgs; [
+    discord
+    obsidian
+    gimp
+    spotify
+    whatsapp-for-linux
+  ];
+
+  hyprlandTools = with pkgs; [
     swaynotificationcenter
     swayidle
     swaylock
     rofi-wayland
-    imv
-    gimp
-    pavucontrol
-    #    font-awesome
-    spotify
-    rustup
-    #    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    gnome.adwaita-icon-theme
-    sublime4
-    vscode
-    jetbrains-toolbox
-    jetbrains.rider
-    jetbrains.phpstorm
-    playerctl
-    discord
-    whatsapp-for-linux
-    obsidian
-    notion-app-enhanced
-    filezilla
   ];
+
+  audioTools = with pkgs; [
+    pavucontrol
+    playerctl
+  ];
+
+  webTools = with pkgs; [
+    filezilla
+    nmap
+  ];
+
+  others = with pkgs; [
+    rsync
+    libvirt
+    swww
+    grim
+    slurp
+    imv
+    # font-awesome
+    rustup
+    gnome.adwaita-icon-theme
+  ];
+
+  combinedPackages =
+    browsers ++ ides ++ myPrograms ++ hyprlandTools ++ audioTools ++ webTools ++ others;
+in {
+  home.packages = combinedPackages;
 }

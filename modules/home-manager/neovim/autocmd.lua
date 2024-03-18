@@ -1,0 +1,15 @@
+-- -- Auto-save on text change
+-- vim.api.nvim_create_autocmd("TextChanged", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.cmd("write")
+-- 	end,
+-- })
+--
+-- -- Optional: Auto-save when leaving insert mode
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.cmd("write")
+-- 	end,
+-- })

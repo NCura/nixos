@@ -1,17 +1,21 @@
-{ config, pkgs, ... }:
-
 {
-  programs.waybar.settings =  {
+  config,
+  pkgs,
+  ...
+}: {
+  programs.waybar.settings = {
     mainBar = {
       layer = "top";
       position = "top";
       height = 30;
-      
-      modules-center = [ "hyprland/workspaces" ];
-      modules-right = [ "clock" ];
-      
+
+      modules-center = [
+        "hyprland/workspaces"
+        "clock"
+      ];
+
       "hyprland/workspaces" = {
-        format ="{name}"; #"{icon}";
+        format = "{name}"; # "{icon}";
         format-icons = {
           default = " ";
           active = " ";
@@ -20,9 +24,9 @@
         on-scroll-up = "hyprctl dispatch workspace e+1";
         on-scroll-down = "hyprctl dispatch workspace e-1";
       };
-      
+
       "clock" = {
-        format = ''{: %H:%M}'';
+        format = "{: %H:%M}";
         tooltip = true;
         tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
       };
@@ -38,3 +42,4 @@
     };
   };
 }
+

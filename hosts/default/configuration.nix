@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -15,12 +12,12 @@
     ./../../modules/nixos/bluetooth.nix
     ./../../modules/nixos/internationalisation.nix
     ./../../modules/nixos/main-user.nix
-    # ./../../modules/nixos/openrgb.nix
     ./../../modules/nixos/printing.nix
     ./../../modules/nixos/session-variables.nix
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/system-packages.nix
     ./../../modules/nixos/virtualization.nix
+    ./../../modules/nixos/wordpress.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -32,7 +29,7 @@
   boot.kernelModules = ["kvm-amd"];
   services.xserver.videoDrivers = ["amdgpu"];
 
-  # security.sudo.wheelNeedsPassword = false;
+  security.sudo.wheelNeedsPassword = false;
 
   networking = {
     networkmanager.enable = true;
@@ -54,10 +51,8 @@
         "nix-command"
         "flakes"
       ];
-      #        substituters = ["https://hyprland.cachix.org"];
-      #        trusted-public-keys = [
-      #          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      #        ];
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
     gc = {
       automatic = true;

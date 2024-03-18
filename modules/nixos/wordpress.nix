@@ -1,0 +1,64 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
+
+  services.httpd = {
+    enable = true;
+    enablePHP = true;
+    virtualHosts = {
+      "localhost" = {
+        documentRoot = "/var/lib/www/localhost";
+        extraConfig = ''
+          DirectoryIndex index.php
+        '';
+      };
+      "staging.nicolascura.com.local" = {
+        documentRoot = "/var/lib/www/staging.nicolascura.com";
+        extraConfig = ''
+          DirectoryIndex index.php
+          <Directory "/var/lib/www/staging.nicolascura.com">
+            AllowOverride All
+            Require all granted
+            Options +FollowSymLinks
+          </Directory>
+        '';
+      };
+      "staging.st-patrimoine.com.local" = {
+        documentRoot = "/var/lib/www/staging.st-patrimoine.com";
+        extraConfig = ''
+          DirectoryIndex index.php
+          <Directory "/var/lib/www/staging.st-patrimoine.com">
+            AllowOverride All
+            Require all granted
+            Options +FollowSymLinks
+          </Directory>
+        '';
+      };
+      "test-wordpress.com.local" = {
+        documentRoot = "/var/lib/www/test-wordpress.com";
+        extraConfig = ''
+          DirectoryIndex index.php
+          <Directory "/var/lib/www/test-wordpress.com">
+            AllowOverride All
+            Require all granted
+            Options +FollowSymLinks
+          </Directory>
+        '';
+      };
+    };
+  };
+
+  networking.hosts = {
+    "127.0.0.1" = [
+      "staging.nicolascura.com.local"
+      "staging.st-patrimoine.com.local"
+      "test-wordpress.com.local"
+    ];
+  };
+}
