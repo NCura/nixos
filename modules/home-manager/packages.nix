@@ -13,6 +13,7 @@
 
   myPrograms = with pkgs; [
     discord
+    webcord
     obsidian
     gimp
     spotify
@@ -23,7 +24,6 @@
     swaynotificationcenter
     swayidle
     swaylock
-    rofi-wayland
   ];
 
   audioTools = with pkgs; [

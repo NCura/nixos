@@ -50,7 +50,7 @@
       vim-nix
       neodev-nvim
       indentLine
-      vim-rooter
+      # vim-rooter
       codeium-vim
 
       (addWithFile "conform-nvim")

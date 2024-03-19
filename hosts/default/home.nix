@@ -8,6 +8,7 @@
   imports = [
     ./../../modules/home-manager/files
     ./../../modules/home-manager/hyprland
+    ./../../modules/home-manager/rofi
     ./../../modules/home-manager/waybar
     ./../../modules/home-manager/neovim
 
@@ -24,7 +25,4 @@
   home.stateVersion = "23.11";
   home.username = "nicolas";
   home.homeDirectory = "/home/nicolas";
-  # home.sessionVariables = {
-  #   # EDITOR = "emacs";
-  # };
 }

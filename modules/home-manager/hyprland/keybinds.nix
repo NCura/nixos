@@ -1,4 +1,17 @@
 {
+  wayland.windowManager.hyprland.extraConfig = ''
+    bind = $mod, R, submap, rofisubmap
+    submap = rofisubmap
+    bind = , e, exec, rofi -modi emoji -show emoji
+    bind = , e, submap, reset
+    bind = , r, exec, rofi -show drun -modi drun
+    bind = , r, submap, reset
+    bind = , c, exec, rofi -show calc -modi calc
+    bind = , c, submap, reset
+    bind = , escape, submap, reset
+    submap = reset
+  '';
+
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     bind = [
@@ -18,10 +31,10 @@
       "$mod, 0, workspace, 10"
 
       "$mod, Return, exec, kitty"
-      "$mod, Space, exec, rofi -show drun -modi drun"
+      # "$mod, Space, exec, rofi -show drun -modi drun"
 
       "$mod, Q, killactive,"
-      "$mod, R, exec, rofi -show drun -modi drun"
+      # "$mod, R, exec, rofi -show drun -modi drun"
       "$mod, B, exec, vivaldi"
       "$mod, H, movefocus, l"
       "$mod, J, movefocus, d"
@@ -74,4 +87,3 @@
     ];
   };
 }
-
