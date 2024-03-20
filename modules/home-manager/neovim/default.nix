@@ -37,6 +37,7 @@
       nixpkgs-fmt
       alejandra
 
+      nodePackages.intelephense
       phpactor
       php82Packages.php-cs-fixer
       typescript
@@ -58,6 +59,8 @@
       (addWithFile "harpoon2")
       (addWithFile "undotree")
       (addWithFile "vim-fugitive")
+      (addWithFile "which-key-nvim")
+      (addWithFile "lazygit-nvim")
 
       (addWithFile "lualine-nvim")
 

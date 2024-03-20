@@ -34,12 +34,13 @@
       # "$mod, Space, exec, rofi -show drun -modi drun"
 
       "$mod, Q, killactive,"
+      "$mod, F, fullscreen,"
       # "$mod, R, exec, rofi -show drun -modi drun"
-      "$mod, B, exec, vivaldi"
       "$mod, H, movefocus, l"
       "$mod, J, movefocus, d"
       "$mod, K, movefocus, u"
       "$mod, L, movefocus, r"
+      "$mod, B, exec, vivaldi"
 
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"

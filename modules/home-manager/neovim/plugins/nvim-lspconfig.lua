@@ -105,3 +105,27 @@ require("lspconfig").csharp_ls.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").tsserver.setup({})
+
+require("lspconfig").intelephense.setup({
+	capabilities = capabilities,
+	settings = {
+		intelephense = {
+			stubs = {
+				"bcmath",
+				"bz2",
+				"calendar",
+				"Core",
+				"curl",
+				"zip",
+				"zlib",
+				"wordpress",
+				"woocommerce",
+				"acf-pro",
+				"wordpress-globals",
+				"wp-cli",
+				"genesis",
+				"polylang",
+			},
+		},
+	},
+})

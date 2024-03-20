@@ -28,9 +28,9 @@ in {
     settings = {
       exec-once = "${startupScript}/bin/startup-hyprland";
       monitor = [
-        "DP-3, modeline 6511.45 7680 8416 9288 10896 2160 2161 2164 2490 +hsync -vsync, auto, auto"
-        # ", 7680x2160@240, auto, auto"
-        "DP-3, 7680x2160, auto, auto"
+        ", modeline 6511.45 7680 8416 9288 10896 2160 2161 2164 2490 +hsync -vsync, auto, auto, vrr, 1"
+        # "DP-3, 7680x2160@240, auto, auto"
+        # "DP-3, 7680x2160, auto, auto"
       ];
     };
   };
