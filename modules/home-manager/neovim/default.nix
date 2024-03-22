@@ -1,18 +1,12 @@
 {pkgs, ...}: {
   home.packages = [pkgs.neovide];
+  home.file.".config/neovide/config.toml".source = ./plugins/neovide.toml;
+
   programs.neovim = let
     addWithFile = pluginName: {
       plugin = pkgs.vimPlugins.${pluginName};
       type = "lua";
       config = builtins.readFile (toString ./. + "/plugins/" + pluginName + ".lua");
-    };
-    addWithCommand = {
-      pluginName,
-      command,
-    }: {
-      plugin = pkgs.vimPlugins.${pluginName};
-      type = "lua";
-      config = "${command}";
     };
   in {
     enable = true;
@@ -32,7 +26,7 @@
       lua-language-server
       stylua
 
-      rnix-lsp
+      nil
       nixfmt-rfc-style
       nixpkgs-fmt
       alejandra
@@ -54,9 +48,13 @@
       # vim-rooter
       codeium-vim
 
+      (addWithFile "auto-save-nvim")
+      (addWithFile "catppuccin-nvim")
+      (addWithFile "comment-nvim")
       (addWithFile "conform-nvim")
-      (addWithFile "neo-tree-nvim")
       (addWithFile "harpoon2")
+      (addWithFile "neo-tree-nvim")
+      (addWithFile "nvim-spectre")
       (addWithFile "undotree")
       (addWithFile "vim-fugitive")
       (addWithFile "which-key-nvim")
@@ -75,15 +73,6 @@
       (addWithFile "telescope-nvim")
       telescope-ui-select-nvim
       telescope-fzf-native-nvim
-
-      (addWithCommand {
-        pluginName = "comment-nvim";
-        command = ''require("Comment").setup()'';
-      })
-      (addWithCommand {
-        pluginName = "catppuccin-nvim";
-        command = ''vim.cmd.colorscheme "catppuccin"'';
-      })
 
       {
         plugin = nvim-treesitter.withAllGrammars;

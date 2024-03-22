@@ -22,8 +22,8 @@
 
   hyprlandTools = with pkgs; [
     swaynotificationcenter
-    swayidle
-    swaylock
+    # swayidle
+    # swaylock
   ];
 
   audioTools = with pkgs; [

@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.waybar.settings = {
     mainBar = {
       layer = "top";
@@ -42,4 +38,3 @@
     };
   };
 }
-

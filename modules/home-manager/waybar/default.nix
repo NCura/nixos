@@ -6,4 +6,3 @@
     style = ./style.css;
   };
 }
-

@@ -26,7 +26,11 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelModules = ["kvm-amd"];
+  boot.kernelModules = [
+    "kvm-amd"
+    "xone"
+  ];
+  boot.extraModulePackages = with pkgs; [linuxPackages_6_6.xone]; # Xbox controller
   services.xserver.videoDrivers = ["amdgpu"];
 
   security.sudo.wheelNeedsPassword = false;

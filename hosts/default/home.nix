@@ -1,10 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
   imports = [
     ./../../modules/home-manager/files
     ./../../modules/home-manager/hyprland
@@ -15,6 +9,7 @@
     ./../../modules/home-manager/bash.nix
     ./../../modules/home-manager/default-applications.nix
     ./../../modules/home-manager/git.nix
+    ./../../modules/home-manager/gtk-qt.nix
     ./../../modules/home-manager/kitty.nix
     ./../../modules/home-manager/others.nix
     ./../../modules/home-manager/packages.nix

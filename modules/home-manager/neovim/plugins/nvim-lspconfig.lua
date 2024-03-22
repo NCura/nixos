@@ -86,25 +86,25 @@ require("lspconfig").lua_ls.setup({
 	},
 })
 
-require("lspconfig").rnix.setup({
+require("lspconfig").nil_ls.setup({
 	capabilities = capabilities,
 })
 require("lspconfig").phpactor.setup({
 	capabilities = capabilities,
 })
-require("lspconfig").html.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").cssmodules_ls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").cssls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").csharp_ls.setup({
-	capabilities = capabilities,
-})
-require("lspconfig").tsserver.setup({})
+-- require("lspconfig").html.setup({
+-- 	capabilities = capabilities,
+-- })
+-- require("lspconfig").cssmodules_ls.setup({
+-- 	capabilities = capabilities,
+-- })
+-- require("lspconfig").cssls.setup({
+-- 	capabilities = capabilities,
+-- })
+-- require("lspconfig").csharp_ls.setup({
+-- 	capabilities = capabilities,
+-- })
+-- require("lspconfig").tsserver.setup({})
 
 require("lspconfig").intelephense.setup({
 	capabilities = capabilities,
@@ -116,8 +116,40 @@ require("lspconfig").intelephense.setup({
 				"calendar",
 				"Core",
 				"curl",
+				"date",
+				"dom",
+				"fileinfo",
+				"filter",
+				"ftp",
+				"gd",
+				"gettext",
+				"gmp",
+				"SPL",
+				"hash",
+				"iconv",
+				"json",
+				"ldap",
+				"mbstring",
+				"mysqlnd",
+				"PDO",
+				"Phar",
+				"posix",
+				"Reflection",
+				"session",
+				"SimpleXML",
+				"soap",
+				"sockets",
+				"sodium",
+				"standard",
+				"superglobals",
+				"tokenizer",
+				"xml",
+				"xmlreader",
+				"xmlwriter",
+				"xsl",
 				"zip",
 				"zlib",
+				-- WordPress-related stubs
 				"wordpress",
 				"woocommerce",
 				"acf-pro",

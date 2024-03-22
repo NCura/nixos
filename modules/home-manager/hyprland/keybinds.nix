@@ -2,12 +2,18 @@
   wayland.windowManager.hyprland.extraConfig = ''
     bind = $mod, R, submap, rofisubmap
     submap = rofisubmap
+    bind = , w, exec, whatsapp
+    bind = , w, submap, reset
     bind = , e, exec, rofi -modi emoji -show emoji
     bind = , e, submap, reset
     bind = , r, exec, rofi -show drun -modi drun
     bind = , r, submap, reset
+    bind = , s, exec, spotify
+    bind = , s, submap, reset
     bind = , c, exec, rofi -show calc -modi calc
     bind = , c, submap, reset
+    bind = , b, exec, vivaldi
+    bind = , b, submap, reset
     bind = , escape, submap, reset
     submap = reset
   '';
@@ -40,7 +46,7 @@
       "$mod, J, movefocus, d"
       "$mod, K, movefocus, u"
       "$mod, L, movefocus, r"
-      "$mod, B, exec, vivaldi"
+      # "$mod, B, exec, vivaldi"
 
       "$mod, mouse_down, workspace, e+1"
       "$mod, mouse_up, workspace, e-1"

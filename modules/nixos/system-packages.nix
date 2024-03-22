@@ -34,6 +34,11 @@
     wlr-randr
     ripgrep
     sshfs
+    php83
+    php
+    lazygit
+    ripgrep
+    linuxKernel.packages.linux_6_6.xone
     #   material-icons
     # (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];

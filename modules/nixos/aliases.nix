@@ -1,8 +1,4 @@
 {
-  config,
-  pkgs,
-  ...
-}: {
   programs.bash.shellAliases = {
     ls = "eza --icons --header --all --long --no-time --no-user --no-permissions --no-filesize --group-directories-first";
     lss = "eza --icons --all --across --group-directories-first";
@@ -21,6 +17,6 @@
     ncreboot = "sudo systemctl reboot";
     ncpoweroff = "sudo systemctl poweroff";
 
-    st-patrimoine = "~/bin/open-neovide.sh /var/lib/www/staging.st-patrimoine.com/wp-content/plugins/st-plugin";
+    st-patrimoine = "~/bin/open-neovide.sh /var/lib/www/staging.st-patrimoine.com";
   };
 }
