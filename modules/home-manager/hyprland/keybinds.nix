@@ -89,8 +89,8 @@
     ];
 
     bindel = [
-      "$mod, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
-      "$mod, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
+      "$mod, XF86AudioRaiseVolume, exec, wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume @DEFAULT_SINK@ 5%+"
+      "$mod, XF86AudioLowerVolume, exec, wpctl set-mute @DEFAULT_SINK@ 0 && wpctl set-volume @DEFAULT_SINK@ 5%-"
     ];
   };
 }

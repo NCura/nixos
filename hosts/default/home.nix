@@ -11,6 +11,7 @@
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/gtk-qt.nix
     ./../../modules/home-manager/kitty.nix
+    ./../../modules/home-manager/obs-studio.nix
     ./../../modules/home-manager/others.nix
     ./../../modules/home-manager/packages.nix
     ./../../modules/home-manager/qutebrowser.nix
