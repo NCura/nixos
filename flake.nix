@@ -30,6 +30,8 @@
     pkgs = nixpkgs.legacyPackages.${system};
     pkgs-23_11 = nixpkgs-23_11.legacyPackages.${system};
   in {
+    # imports = [./modules/nixos/bazecor];
+
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {
         inherit inputs;

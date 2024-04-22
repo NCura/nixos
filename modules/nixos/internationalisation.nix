@@ -1,11 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-  console.keyMap = "es";
+  # console.keyMap = "us";
   time.timeZone = "Europe/Paris";
   services.xserver = {
-    xkb.layout = "es";
-    xkb.variant = "";
+    # xkb.layout = "us";
+    # xkb.variant = "intl";
   };
   i18n.defaultLocale = "en_US.UTF-8";
 

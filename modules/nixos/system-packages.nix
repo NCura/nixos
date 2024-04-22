@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "freeimage-unstable-2021-11-01"
@@ -38,9 +34,14 @@
     php
     lazygit
     ripgrep
+    v4l-utils
+    polkit_gnome
     linuxKernel.packages.linux_6_6.xone
     #   material-icons
     # (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    nss # for Bazecor
+    nspr # for Bazecor
+    atk
   ];
 
   fonts.packages = with pkgs; [

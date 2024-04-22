@@ -3,7 +3,6 @@
   inputs,
   ...
 }: let
-  wallpaperPath = "";
   startupScriptPath = ./startup.sh;
   startupScript = pkgs.writeScriptBin "startup-hyprland" (builtins.readFile startupScriptPath);
 in {
@@ -25,16 +24,29 @@ in {
     systemd.enable = true;
 
     settings = {
-      exec-once = "${startupScript}/bin/startup-hyprland";
+      exec-once = [
+        "${startupScript}/bin/startup-hyprland"
+        "[workspace 3 silent] vivaldi"
+        "[workspace 7 silent] obsidian"
+        "[workspace 8 silent] qutebrowser"
+        "[workspace 8 silent] discord"
+        "hypridle"
+      ];
       monitor = [
         # "DP-3, modeline 6511.45 7680 8416 9288 10896 2160 2161 2164 2490 +hsync -vsync, auto, auto"
         # "DP-3, 7680x2160@240, auto, auto"
         ", highres, auto, 1"
       ];
     };
+    extraConfig = ''
+      exec-once = $POLKIT_BIN
+      exec-once = dbus-update-activation-environment --systemd --all
+      exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+    '';
   };
 
   home.packages = with pkgs; [
+    hyprpicker
     hyprpaper
     hypridle
     hyprlock

@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
@@ -11,6 +7,10 @@
   services.httpd = {
     enable = true;
     enablePHP = true;
+    phpOptions = ''
+      upload_max_filesize = 100M
+      post_max_size = 128M
+    '';
     virtualHosts = {
       "localhost" = {
         documentRoot = "/var/lib/www/localhost";
@@ -30,6 +30,17 @@
         '';
       };
       "staging.st-patrimoine.com.local" = {
+        documentRoot = "/var/lib/www/staging.st-patrimoine.com";
+        extraConfig = ''
+          DirectoryIndex index.php
+          <Directory "/var/lib/www/staging.st-patrimoine.com">
+            AllowOverride All
+            Require all granted
+            Options +FollowSymLinks
+          </Directory>
+        '';
+      };
+      "staging.st-patrimoine2.com.local" = {
         documentRoot = "/var/lib/www/staging.st-patrimoine.com";
         extraConfig = ''
           DirectoryIndex index.php

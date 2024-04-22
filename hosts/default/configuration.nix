@@ -1,23 +1,25 @@
 {
   config,
   pkgs,
-  lib,
   inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ./../../modules/nixos/aliases.nix
+    ./../../modules/nixos/app-images.nix
     ./../../modules/nixos/audio.nix
     ./../../modules/nixos/bluetooth.nix
     ./../../modules/nixos/internationalisation.nix
     ./../../modules/nixos/main-user.nix
+    ./../../modules/nixos/polkit.nix
     ./../../modules/nixos/printing.nix
     ./../../modules/nixos/session-variables.nix
     ./../../modules/nixos/steam.nix
     ./../../modules/nixos/system-packages.nix
     ./../../modules/nixos/virtualization.nix
     ./../../modules/nixos/wordpress.nix
+    ./../../modules/nixos/xdg-portal.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -29,12 +31,21 @@
   boot.kernelModules = [
     "kvm-amd"
     "xone"
+    "v4l2loopback"
   ];
-  boot.extraModulePackages = with pkgs; [linuxPackages_6_6.xone]; # Xbox controller
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 2147483642;
+  };
+  # For obs
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.v4l2loopback
+    # pkgslinuxPackages_6_6.xone for xbox controller
+  ];
   services.xserver.videoDrivers = ["amdgpu"];
 
   security.sudo.wheelNeedsPassword = false;
 
+  boot.supportedFilesystems = ["ntfs"];
   networking = {
     networkmanager.enable = true;
     hostName = "nixos";

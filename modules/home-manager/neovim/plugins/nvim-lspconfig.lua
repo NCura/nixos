@@ -70,8 +70,11 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 -- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+local lspconfig = require("lspconfig")
+local util = require("lspconfig/util")
+
 require("neodev").setup()
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
 	-- on_attach = on_attach,
 	capabilities = capabilities,
 	root_dir = function()
@@ -85,28 +88,38 @@ require("lspconfig").lua_ls.setup({
 		},
 	},
 })
-
-require("lspconfig").nil_ls.setup({
+lspconfig.rust_analyzer.setup({
+	filetypes = { "rust" },
+	root_dir = util.root_pattern("Cargo.toml"),
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				allFeatures = true,
+			},
+		},
+	},
+})
+lspconfig.nil_ls.setup({
 	capabilities = capabilities,
 })
-require("lspconfig").phpactor.setup({
+lspconfig.phpactor.setup({
 	capabilities = capabilities,
 })
--- require("lspconfig").html.setup({
+-- lspconfig.html.setup({
 -- 	capabilities = capabilities,
 -- })
--- require("lspconfig").cssmodules_ls.setup({
+-- lspconfig.cssmodules_ls.setup({
 -- 	capabilities = capabilities,
 -- })
--- require("lspconfig").cssls.setup({
+-- lspconfig.cssls.setup({
 -- 	capabilities = capabilities,
 -- })
--- require("lspconfig").csharp_ls.setup({
+-- lspconfig.csharp_ls.setup({
 -- 	capabilities = capabilities,
 -- })
--- require("lspconfig").tsserver.setup({})
+-- lspconfig.tsserver.setup({})
 
-require("lspconfig").intelephense.setup({
+lspconfig.intelephense.setup({
 	capabilities = capabilities,
 	settings = {
 		intelephense = {

@@ -1,9 +1,4 @@
 {
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   users.users.nicolas = {
     isNormalUser = true;
     createHome = true;
@@ -16,6 +11,8 @@
       "libvirt"
       "kvm"
       "wwwrun"
+      "uucp"
+      "plugdev"
     ];
   };
 

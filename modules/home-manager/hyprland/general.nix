@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -9,12 +7,13 @@
         border_size = 2;
         "col.active_border" = "rgb(deb887)";
         "col.inactive_border" = "rgb(595959)";
-    
+
         layout = "dwindle";
-    
+
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
       };
     };
   };
 }
+

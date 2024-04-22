@@ -99,7 +99,9 @@ map_n("<C->>", "5<C-w>>", "Increase window width by 5")
 map_n("<C-<>", "5<C-w><", "Decrease window width by 5")
 map_n("<C-w>+", "5<C-w>+", "Increase window height by 5")
 map_n("<C-w>-", "5<C-w>-", "Decrease window height by 5")
-map_n("<C-o>", ":normal o<Esc><CR>", "Insert new line below cursor")
+map_n("<C-o>", "<nop>", "Disable <C-o>")
+map_n("<C-o>", ":normal! o<Esc>", "Insert new line below cursor")
+-- map_n("<C-o>", ":let save_cursor = getcurpos() | normal! o<Esc> | call setpos('.', save_cursor)")
 --------------------------------------------------------------------------------------------------------
 ----------------------------------------------- <A> ----------------------------------------------------
 --------------------------------------------------------------------------------------------------------
@@ -118,7 +120,7 @@ end, "Complete codeium suggestion")
 ----------------------------------------------- <C-S> --------------------------------------------------
 --------------------------------------------------------------------------------------------------------
 map_n("<C-S-Tab>", ":bprevious<CR>", "Previous buffer")
-map_n("<C-S-O>", ":normal O<Esc><CR>", "Insert new line above cursor")
+map_n("<C-S-O>", ":normal O<Esc>", "Insert new line above cursor")
 map_n("<C-S-P>", function()
 	harpoon:list():prev()
 end, "Previous buffer in Harpoon list")

@@ -42,10 +42,17 @@
     swww
     grim
     slurp
+    swappy
+    (import ./files/screenshootin.nix {inherit pkgs;})
     imv
     # font-awesome
-    rustup
     gnome.adwaita-icon-theme
+
+    (import ./bazecor {
+      inherit lib;
+      inherit appimageTools;
+      inherit fetchurl;
+    })
   ];
 
   combinedPackages =
