@@ -18,4 +18,4 @@ if [ ! -d "$TARGET_DIR" ]; then
 fi
 
 # Change to the target directory and launch Neovide
-cd "$TARGET_DIR" && exec neovide
+cd "$TARGET_DIR" && exec nvim

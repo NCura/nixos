@@ -46,7 +46,7 @@
       neodev-nvim
       indentLine
       # vim-rooter
-      codeium-vim
+      # codeium-vim
 
       (addWithFile "auto-save-nvim")
       (addWithFile "catppuccin-nvim")
@@ -73,6 +73,7 @@
       (addWithFile "telescope-nvim")
       telescope-ui-select-nvim
       telescope-fzf-native-nvim
+      telescope-file-browser-nvim
 
       {
         plugin = nvim-treesitter.withAllGrammars;

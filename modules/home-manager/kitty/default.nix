@@ -12,8 +12,8 @@
       background_opacity = "1.00";
     };
     keybindings = {
-      "ctrl+c" = "copy_or_interrupt";
-      "ctrl+v" = "paste_from_clipboard";
+      # "ctrl+c" = "copy_or_interrupt";
+      # "ctrl+v" = "paste_from_clipboard";
     };
     extraConfig = ''
       tab_bar_style fade
@@ -23,4 +23,3 @@
     '';
   };
 }
-
