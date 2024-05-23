@@ -1,0 +1,20 @@
+system: "base16"
+variant: "dark"
+palette:
+  base00: "171717" # Main background
+  base01: "1e1e1e" # Darker background (for status bars, line number and folding marks)
+  base02: "212121" # Background highlight (for selection)
+  base03: "595959" # Comments, invisibles, line highlighting
+  base04: "b0b0b0" # Dark foreground (for status bars)
+  base05: "ececec" # Default foreground, caret, delimiters, operators
+  base06: "ffd7ba" # Light foreground (not often used)
+  base07: "ffffff" # Light background (not often used)
+  base08: "e57373" # Variables, XML tags, markup link text, lists, etc.
+  base09: "deb887" # Integers, booleans, constants, XML attributes, markup link url
+  base0A: "deb887" # Classes, markup bold, search text background
+  base0B: "c5e1a5" # Strings, inherited class, markup code, diff addition
+  base0C: "deb887" # Support, regular expressions, escape characters, markup quotes
+  base0D: "ececec" # Functions, methods, attribute IDs, headings
+  base0E: "f9e79f" # Keywords, storage, selector, markup italic, diff changed
+  base0F: "f2cdcd" # Deprecated, opening/closing embedded language tags, error messages
+

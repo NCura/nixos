@@ -8,19 +8,20 @@
 
       "$mod, Q, killactive,"
       # "$mod, W, ,"
-      "$mod, E, exec, ranger"
+      "$mod, E, exec, pypr toggle ranger && hyprctl dispatch bringactivetotop"
       "$mod, R, exec, rofi -show drun"
-      # "$mod, T, ,"
+      "$mod, T, exec, pypr toggle term && hyprctl dispatch bringactivetotop"
+      "$mod, T, exec, kitty"
       # "$mod, Y, ,"
       # "$mod, U, ,"
       # "$mod, I, ,"
-      # "$mod, O, ,"
+      "$mod, O, exec, pypr toggle obsidian && hyprctl dispatch bringactivetotop"
       # "$mod, P, ,"
 
       # "$mod, code:23, ,"
       # "$mod, A, ,"
       "$mod, S, exec, screenshootin"
-      # "$mod, D, ,"
+      "$mod, D, exec, pypr toggle chat && hyprctl dispatch bringactivetotop"
       "$mod, F, fullscreen,"
       # "$mod, G, ,"
       "$mod, H, movefocus, l"
@@ -28,7 +29,7 @@
       "$mod, K, movefocus, u"
       "$mod, L, movefocus, r"
       # "$mod, code:47, ,"
-      "$mod, code:48, exec, kitty"
+      "$mod, code:48, exec, pypr toggle term && hyprctl dispatch bringactivetotop"
 
       "$mod, Z, workspace, 1"
       "$mod, X, workspace, 2"
@@ -74,8 +75,9 @@
       # MOD + CONTROL
       # --------------------------------------------------------
 
-      "$mod CONTROL, B, exec, pkill waybar && waybar"
       "$mod CONTROL, Q, exit,"
+      "$mod CONTROL, P, exec, pypr reload"
+      "$mod CONTROL, B, exec, pkill waybar && waybar"
 
       # --------------------------------------------------------
       # MOD + CONTROL + ALT

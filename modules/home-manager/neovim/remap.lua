@@ -134,6 +134,7 @@ end, "Next buffer in Harpoon list")
 --------------------------------------------------------------------------------------------------------
 map_n("<C-A-a>", ":b#<CR>", "Go to previous buffer")
 map_n("<C-A-s>", ":wall<CR>", "Save all files")
+map_n("<C-A-g>", ":LazyGit<CR>", "Toggle LazyGit")
 map_n("<C-A-n>", ":Neotree toggle<CR>", "Toggle neotree")
 map_n("<C-A-h>", "<C-w>h", "Move focus to the left window")
 map_n("<C-A-l>", "<C-w>l", "Move focus to the right window")

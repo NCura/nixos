@@ -2,14 +2,14 @@
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
-    font.name = "JetBrains Mono";
-    font.size = 14;
+    # font.name = "JetBrains Mono";
+    # font.size = 14;
     settings = {
       scrollback_lines = 2000;
       wheel_scroll_min_lines = 1;
       window_padding_width = 0;
       confirm_os_window_close = 0;
-      background_opacity = "1.00";
+      # background_opacity = "1.00";
     };
     keybindings = {
       # "ctrl+c" = "copy_or_interrupt";

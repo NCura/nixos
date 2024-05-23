@@ -9,6 +9,6 @@
       rofi-screenshot
       rofi-power-menu
     ];
-    theme = ./theme.rasi;
+    # theme = ./theme.rasi;
   };
 }

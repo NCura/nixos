@@ -6,8 +6,8 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
 
-    XCURSOR_SIZE = "24";
-    HYPRCURSOR_SIZE = "84";
+    # XCURSOR_SIZE = "24";
+    HYPRCURSOR_SIZE = "24";
 
     HYPRCURSOR_THEME = "Bibata-Modern-Ice";
 

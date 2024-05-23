@@ -15,6 +15,7 @@ in {
     ./misc.nix
 
     #./plugins/border-plus-plus.nix
+    ./plugins/pyprland.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -27,10 +28,9 @@ in {
       exec-once = [
         "${startupScript}/bin/startup-hyprland"
         "[workspace 3 silent] vivaldi"
-        "[workspace 7 silent] obsidian"
-        "[workspace 8 silent] qutebrowser"
         "[workspace 8 silent] discord"
         "hypridle"
+        "pypr"
       ];
       monitor = [
         # "DP-3, modeline 6511.45 7680 8416 9288 10896 2160 2161 2164 2490 +hsync -vsync, auto, auto"
@@ -42,6 +42,7 @@ in {
       exec-once = $POLKIT_BIN
       exec-once = dbus-update-activation-environment --systemd --all
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+      windowrulev2 = float,class:^(?i)chat$
     '';
   };
 

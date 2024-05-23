@@ -9,11 +9,11 @@
 
   gtk = {
     enable = true;
-    font = {
-      name = "Ubuntu";
-      size = 12;
-      package = pkgs.ubuntu_font_family;
-    };
+    # font = {
+    #   name = "Ubuntu";
+    #   size = 12;
+    #   package = pkgs.ubuntu_font_family;
+    # };
     #    theme = {
     #      name = "${config.colorScheme.slug}";
     #      package = gtkThemeFromScheme {scheme = config.colorScheme;};
@@ -32,7 +32,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "gtk";
     style = {
       name = "adwaita-dark";
       package = pkgs.adwaita-qt;

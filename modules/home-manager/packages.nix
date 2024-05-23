@@ -48,11 +48,11 @@
     # font-awesome
     gnome.adwaita-icon-theme
 
-    (import ./bazecor {
-      inherit lib;
-      inherit appimageTools;
-      inherit fetchurl;
-    })
+    # (import ./bazecor {
+    #   inherit lib;
+    #   inherit appimageTools;
+    #   inherit fetchurl;
+    # })
   ];
 
   combinedPackages =

@@ -11,9 +11,9 @@
     ./../../modules/home-manager/ranger
     ./../../modules/home-manager/rofi
     ./../../modules/home-manager/swappy
-    ./../../modules/home-manager/tmux
+    # ./../../modules/home-manager/tmux
     ./../../modules/home-manager/waybar
-    ./../../modules/home-manager/zellij
+    # ./../../modules/home-manager/zellij
 
     ./../../modules/home-manager/default-applications.nix
     ./../../modules/home-manager/gtk-qt.nix

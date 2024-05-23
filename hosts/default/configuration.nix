@@ -16,6 +16,7 @@
     ./../../modules/nixos/printing.nix
     ./../../modules/nixos/session-variables.nix
     ./../../modules/nixos/steam.nix
+    ./../../modules/nixos/stylix.nix
     ./../../modules/nixos/system-packages.nix
     ./../../modules/nixos/virtualization.nix
     ./../../modules/nixos/wordpress.nix

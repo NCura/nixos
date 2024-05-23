@@ -48,7 +48,7 @@
       # vim-rooter
       # codeium-vim
 
-      (addWithFile "auto-save-nvim")
+      # (addWithFile "auto-save-nvim")
       (addWithFile "catppuccin-nvim")
       (addWithFile "comment-nvim")
       (addWithFile "conform-nvim")

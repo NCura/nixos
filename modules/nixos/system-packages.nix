@@ -42,6 +42,8 @@
     nss # for Bazecor
     nspr # for Bazecor
     atk
+    noto-fonts-cjk-serif
+    noto-fonts
   ];
 
   fonts.packages = with pkgs; [
