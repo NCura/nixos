@@ -13,6 +13,10 @@
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
       };
+
+      "dwindle" = {
+        # default_split_ratio = 0.33;
+      };
     };
   };
 }

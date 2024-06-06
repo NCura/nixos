@@ -1,14 +1,18 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
     plugins = with pkgs; [
-      rofi-calc
-      rofi-emoji
+      (pkgs.rofi-calc.override {rofi-unwrapped = rofi-wayland-unwrapped;})
+      (pkgs.rofi-emoji.override {rofi-unwrapped = rofi-wayland-unwrapped;})
       rofi-bluetooth
-      rofi-screenshot
+      # rofi-screenshot
       rofi-power-menu
     ];
-    # theme = ./theme.rasi;
+    theme = lib.mkForce ./theme.rasi;
   };
 }

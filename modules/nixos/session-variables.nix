@@ -9,7 +9,7 @@
     # XCURSOR_SIZE = "24";
     HYPRCURSOR_SIZE = "24";
 
-    HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+    # HYPRCURSOR_THEME = "Bibata-Modern-Ice";
 
     GSETTINGS_BACKEND = "keyfile";
     MANPAGER = "nvim +Man!";

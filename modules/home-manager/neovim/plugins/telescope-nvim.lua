@@ -11,6 +11,38 @@ require("telescope").setup({
 			require("telescope.themes").get_dropdown({}),
 		},
 	},
+	pickers = {
+		find_files = {
+			mappings = {
+				n = {
+					["<C-s>"] = "select_vertical",
+				},
+				i = {
+					["<C-s>"] = "select_vertical",
+				},
+			},
+		},
+		live_grep = {
+			mappings = {
+				n = {
+					["<C-s>"] = "select_vertical",
+				},
+				i = {
+					["<C-s>"] = "select_vertical",
+				},
+			},
+		},
+		-- file_browser = {
+		-- 	mappings = {
+		-- 		n = {
+		-- 			["<C-s>"] = "select_vertical",
+		-- 		},
+		-- 		i = {
+		-- 			["<C-s>"] = "select_vertical",
+		-- 		},
+		-- 	},
+		-- },
+	},
 })
 
 require("telescope").load_extension("ui-select")

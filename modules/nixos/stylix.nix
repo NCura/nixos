@@ -14,8 +14,10 @@
     };
 
     sansSerif = {
-      package = pkgs.montserrat;
-      name = "Montserrat";
+      # package = pkgs.montserrat;
+      # name = "Montserrat";
+      package = pkgs.dejavu_fonts;
+      name = "DejaVu Sans";
     };
 
     serif = {

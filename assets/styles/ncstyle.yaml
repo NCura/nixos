@@ -2,7 +2,7 @@ system: "base16"
 variant: "dark"
 palette:
   base00: "171717" # Main background
-  base01: "1e1e1e" # Darker background (for status bars, line number and folding marks)
+  base01: "595959" # Darker background (for status bars, line number and folding marks)
   base02: "212121" # Background highlight (for selection)
   base03: "595959" # Comments, invisibles, line highlighting
   base04: "b0b0b0" # Dark foreground (for status bars)

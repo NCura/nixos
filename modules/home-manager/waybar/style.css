@@ -1,9 +1,26 @@
 * {
+    font-size: 20px;
+    font-family: JetBrainsMono Nerd Font Mono;
     border: none;
     border-radius: 0;
 }
 
 window#waybar {
-    background: #16191C;
-    color: #AAB2BF;
+    background: #171717;
+    color: #ececec;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+modules-left {
+    margin-left: 25px;
+}
+
+#clock {
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    font-weight: bold;
+    color: #deb887;
 }

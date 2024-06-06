@@ -51,7 +51,7 @@ in {
     hyprpaper
     hypridle
     hyprlock
-    hyprcursor
+    # hyprcursor
   ];
 
   # environment.systemPackages = with pkgs; [

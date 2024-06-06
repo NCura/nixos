@@ -22,6 +22,7 @@
 
   hyprlandTools = with pkgs; [
     swaynotificationcenter
+    libnotify
     # swayidle
     # swaylock
   ];
@@ -44,6 +45,7 @@
     slurp
     swappy
     (import ./files/screenshootin.nix {inherit pkgs;})
+    (import ./files/web-search.nix {inherit pkgs;})
     imv
     # font-awesome
     gnome.adwaita-icon-theme

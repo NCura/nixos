@@ -6,6 +6,8 @@
     "openssl-1.1.1w" # sublime4
   ];
 
+  programs.ydotool.enable = true;
+
   # To search, run: nix search wget
   environment.systemPackages = with pkgs; [
     vim
@@ -38,12 +40,12 @@
     polkit_gnome
     linuxKernel.packages.linux_6_6.xone
     #   material-icons
-    # (nerdfonts.override {fonts = ["JetBrainsMono"];})
     nss # for Bazecor
     nspr # for Bazecor
     atk
-    noto-fonts-cjk-serif
-    noto-fonts
+    psmisc # for killall
+    jq # A lightweight and flexible command-line JSON processor
+    openssl
   ];
 
   fonts.packages = with pkgs; [
@@ -51,5 +53,9 @@
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     noto-fonts-color-emoji
     symbola
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
+    noto-fonts
+    noto-fonts-extra
   ];
 }

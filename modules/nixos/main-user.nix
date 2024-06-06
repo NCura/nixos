@@ -13,6 +13,7 @@
       "wwwrun"
       "uucp"
       "plugdev"
+      "ydotool"
     ];
   };
 

@@ -45,6 +45,7 @@
       vim-nix
       neodev-nvim
       indentLine
+      vim-kitty-navigator
       # vim-rooter
       # codeium-vim
 
