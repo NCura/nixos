@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{
+    pkgs, ...}: let
   browsers = with pkgs; [
     vivaldi
     firefox
@@ -56,6 +57,8 @@
     #   inherit fetchurl;
     # })
   ];
+
+  # nvim = with pkgs; [nil];
 
   combinedPackages =
     browsers ++ ides ++ myPrograms ++ hyprlandTools ++ audioTools ++ webTools ++ others;

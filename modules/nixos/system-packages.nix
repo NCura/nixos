@@ -7,6 +7,7 @@
   ];
 
   programs.ydotool.enable = true;
+  # programs.nix-ld.enable = true;
 
   # To search, run: nix search wget
   environment.systemPackages = with pkgs; [
@@ -46,6 +47,11 @@
     psmisc # for killall
     jq # A lightweight and flexible command-line JSON processor
     openssl
+    cmake
+    gnumake
+    gccgo
+    cargo
+    nodejs_22
   ];
 
   fonts.packages = with pkgs; [
