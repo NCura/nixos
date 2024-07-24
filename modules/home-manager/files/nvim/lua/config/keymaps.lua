@@ -79,19 +79,12 @@ map_n("<leader>sh", telescope_builtin.help_tags, "[S]earch [H]elp")
 map_n("<leader>sk", telescope_builtin.keymaps, "[S]earch [K]eymaps")
 map_n("<leader>gs", vim.cmd.Git)
 map_n("<leader>ha", function()
-	harpoon:list():append()
+	harpoon:list():add()
 end, "Add buffer to Harpoon list")
 
 --------------------------------------------------------------------------------------------------------
 ----------------------------------------------- <C> ----------------------------------------------------
 --------------------------------------------------------------------------------------------------------
-map_n("<C-0>", function()
-	harpoon.ui:toggle_quick_menu(harpoon:list())
-end, "Toggle Harpoon list")
-map_n("<C-1>", harpoon_list(1), "Select buffer [1] in Harpoon list")
-map_n("<C-2>", harpoon_list(2), "Select buffer [2] in Harpoon list")
-map_n("<C-3>", harpoon_list(3), "Select buffer [3] in Harpoon list")
-map_n("<C-4>", harpoon_list(4), "Select buffer [4] in Harpoon list")
 map_n("<C-Tab>", ":bnext<CR>", "Next buffer")
 map_n("<C-d>", "<C-d>zz", "Scroll half page down then center")
 map_n("<C-u>", "<C-u>zz", "Scroll half page up then center")
@@ -123,7 +116,6 @@ end, "Complete codeium suggestion")
 --------------------------------------------------------------------------------------------------------
 ----------------------------------------------- <C-S> --------------------------------------------------
 --------------------------------------------------------------------------------------------------------
-map_n("<C-S-Tab>", ":bprevious<CR>", "Previous buffer")
 map_n("<C-S-O>", ":normal O<Esc>", "Insert new line above cursor")
 map_n("<C-S-P>", function()
 	harpoon:list():prev()
@@ -135,10 +127,19 @@ end, "Next buffer in Harpoon list")
 --------------------------------------------------------------------------------------------------------
 ----------------------------------------------- <C-A> --------------------------------------------------
 --------------------------------------------------------------------------------------------------------
+map_n("<C-A-Tab>", ":bprevious<CR>", "Previous buffer")
 map_n("<C-A-a>", ":b#<CR>", "Go to previous buffer")
 map_n("<C-A-s>", ":wall<CR>", "Save all files")
 map_n("<C-A-g>", ":LazyGit<CR>", "Toggle LazyGit")
 map_n("<C-A-t>", ":Neotree toggle<CR>", "Toggle neotree")
+
+map_n("<C-A-z>", harpoon_list(1), "Select buffer [1] in Harpoon list")
+map_n("<C-A-x>", harpoon_list(2), "Select buffer [2] in Harpoon list")
+map_n("<C-A-c>", harpoon_list(3), "Select buffer [3] in Harpoon list")
+map_n("<C-A-v>", harpoon_list(4), "Select buffer [4] in Harpoon list")
+map_n("<C-A-b>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, "Toggle Harpoon list")
 
 vim.g.kitty_navigator_no_mappings = 1
 map_n("<D-C-A-S-h>", ":KittyNavigateLeft<CR>", "Move focus to the left window")
@@ -149,8 +150,8 @@ map_n("<D-C-A-S-l>", ":KittyNavigateRight<CR>", "Move focus to the right window"
 -- map_n("<C-A-j>", "<C-w>j", "Move focus to the lower window")
 -- map_n("<C-A-k>", "<C-w>k", "Move focus to the upper window")
 -- map_n("<C-A-l>", "<C-w>l", "Move focus to the right window")
-map_n("<C-A->>", "5<C-w>>", "Increase window width by 5")
 map_n("<C-A-<>", "5<C-w><", "Decrease window width by 5")
+map_n("<C-A->>", "5<C-w>>", "Increase window width by 5")
 
 -- map_n('<leader>p', function()
 --   vim.fn.setreg('+', vim.fn.system('wl-paste -n'), 'c')

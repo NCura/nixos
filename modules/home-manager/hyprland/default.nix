@@ -27,8 +27,8 @@ in {
     settings = {
       exec-once = [
         "${startupScript}/bin/startup-hyprland"
-        "[workspace 3 silent] vivaldi"
-        "[workspace 8 silent] discord"
+        # "[workspace 3 silent] vivaldi"
+        # "[workspace 8 silent] discord"
         "hypridle"
         "pypr"
       ];
@@ -43,12 +43,13 @@ in {
       exec-once = dbus-update-activation-environment --systemd --all
       exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       windowrulev2 = float,class:^(?i)chat$
+      windowrulev2 = float, title:App
     '';
   };
 
   home.packages = with pkgs; [
     hyprpicker
-    hyprpaper
+    # hyprpaper
     hypridle
     hyprlock
     # hyprcursor
@@ -61,7 +62,7 @@ in {
   # ];
 
   home.file = {
-    ".config/hypr/hyprpaper.conf".source = ./plugins/hyprpaper.conf;
+    # ".config/hypr/hyprpaper.conf".source = ./plugins/hyprpaper.conf;
     ".config/hypr/hypridle.conf".source = ./plugins/hypridle.conf;
   };
 }

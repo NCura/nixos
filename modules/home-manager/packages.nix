@@ -1,5 +1,4 @@
-{
-    pkgs, ...}: let
+{pkgs, ...}: let
   browsers = with pkgs; [
     vivaldi
     firefox
@@ -48,8 +47,8 @@
     (import ./files/screenshootin.nix {inherit pkgs;})
     (import ./files/web-search.nix {inherit pkgs;})
     imv
+    lutris
     # font-awesome
-    gnome.adwaita-icon-theme
 
     # (import ./bazecor {
     #   inherit lib;

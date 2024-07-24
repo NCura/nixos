@@ -9,6 +9,7 @@
     nr = "sudo nixos-rebuild switch --flake ~/nixos/#default";
     nfu = "sudo nix flake update ~/nixos/";
     ne = "~/bin/open-neovide.sh ~/nixos";
+    nd = "nix develop";
     ngc = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
 
     ".." = "cd ..";

@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  stylix.enable = true;
   stylix.base16Scheme = ./../../assets/styles/ncstyle.yaml;
 
   stylix.image = /home/nicolas/Pictures/wallpapers/jpg4.jpg;

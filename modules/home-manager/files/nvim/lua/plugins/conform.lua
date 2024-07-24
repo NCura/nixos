@@ -13,9 +13,11 @@ return {
 				-- python = { "isort", "black" },
 				-- Use a sub-list to run only the first available formatter
 				javascript = { { "prettierd", "prettier" } },
+				json = { "jsonfmt" },
 				nix = { "nixfmt", "nixpkgs-fmt", "alejandra" },
 				html = { "htmlbeautifier" },
 				php = { "php_cs_fixer" },
+				toml = { "taplo" },
 			},
 		})
 	end,

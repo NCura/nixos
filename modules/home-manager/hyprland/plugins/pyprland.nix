@@ -13,7 +13,7 @@
 
     [scratchpads.ranger]
     animation = "fromTop"
-    command = "kitty --class kitty-ranger -e ranger"
+    command = "kitty --class kitty-ranger -e nvim"
     class = "kitty-ranger"
     size = "33% 75%"
 

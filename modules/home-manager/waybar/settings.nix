@@ -37,7 +37,8 @@
 
       "clock" = {
         interval = 1;
-        format = "{:%A %d %B %H:%M:%S} ";
+        format = "{:%A %d %B %H:%M:%S} ";
+        # format = "{:%A %d %B %H:%M:%S} ";
         tooltip = true;
         # tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
         tooltip-format = "<tt><small>{calendar}</small></tt>";
@@ -71,13 +72,14 @@
 
       "memory" = {
         interval = 5;
-        format = " {}%";
+        format = "  {}% ";
         tooltip = true;
       };
 
       "cpu" = {
         interval = 5;
-        format = " {usage:2}%";
+        format = " {}%";
+        # format = " {usage:2}%";
         tooltip = true;
       };
 

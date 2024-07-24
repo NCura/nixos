@@ -77,10 +77,16 @@
     };
   };
 
-  hardware.opengl = {
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = [pkgs.amdvlk];
+  hardware.graphics = {
+    enable = true;
+    # driSupport = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      amdvlk
+      vulkan-loader
+      vulkan-validation-layers
+      vulkan-extension-layer
+    ];
     extraPackages32 = [pkgs.driversi686Linux.amdvlk];
   };
 
@@ -102,8 +108,11 @@
     openssl
     python3
     stdenv.cc.cc
+    libxkbcommon
     xorg.libX11
     xorg.libXcursor
+    xorg.libXrandr
+    xorg.libxcb
     xorg.libXext
     xorg.libXi
     xorg.libXrender

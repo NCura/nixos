@@ -1,18 +1,20 @@
 {
   imports = [
     ./../../modules/home-manager/bash
+    ./../../modules/home-manager/fastfetch
     ./../../modules/home-manager/files
     ./../../modules/home-manager/git
     ./../../modules/home-manager/hyprland
     ./../../modules/home-manager/kitty
     ./../../modules/home-manager/neovim
     ./../../modules/home-manager/obs
-    ./../../modules/home-manager/qutebrowser
+    ./../../modules/home-manager/oh-my-posh
+    # ./../../modules/home-manager/qutebrowser
     ./../../modules/home-manager/ranger
     ./../../modules/home-manager/rofi
     ./../../modules/home-manager/swappy
     ./../../modules/home-manager/swaync
-    # ./../../modules/home-manager/tmux
+    ./../../modules/home-manager/tmux
     ./../../modules/home-manager/waybar
     # ./../../modules/home-manager/zellij
 

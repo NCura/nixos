@@ -16,10 +16,10 @@ return {
 					rosewater = "#ffd7ba", -- base06
 					lavender = "#ffffff", -- base07
 					red = "#e57373", -- base08
-					peach = "#deb887", -- base09
+					peach = "#fab387", -- base09
 					yellow = "#deb887", -- base0A
 					green = "#c5e1a5", -- base0B
-					teal = "#deb887", -- base0C
+					teal = "#94e2d5", -- base0C
 					blue = "#ececec", -- base0D
 					mauve = "#f9e79f", -- base0E
 					flamingo = "#f2cdcd", -- base0F
@@ -28,5 +28,11 @@ return {
 		})
 
 		vim.cmd.colorscheme("catppuccin-mocha")
+		-- Hide semantic highlights for functions
+		vim.api.nvim_set_hl(0, "@lsp.type.function", {})
+		-- Hide all semantic highlights
+		for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+			vim.api.nvim_set_hl(0, group, {})
+		end
 	end,
 }

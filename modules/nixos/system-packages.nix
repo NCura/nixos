@@ -29,7 +29,6 @@
     wl-clipboard
     lm_sensors
     liquidctl
-    neofetch
     wlr-randr
     ripgrep
     sshfs
@@ -50,8 +49,12 @@
     cmake
     gnumake
     gccgo
-    cargo
-    nodejs_22
+    # cargo
+    # nodejs_22
+    # gnome.adwaita-icon-theme
+    synergy
+    wineWowPackages.waylandFull
+    bazecor
   ];
 
   fonts.packages = with pkgs; [
