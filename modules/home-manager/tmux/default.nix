@@ -5,7 +5,10 @@
     clock24 = true;
     # customPaneNavigationAndResize = true;
     # disableConfirmationPrompt = true;
-    # extraConfig = '''';
+    extraConfig = ''
+      unbind r
+      bind r source-file ~/.config/tmux/tmux.conf
+    '';
     keyMode = "vi";
     mouse = true;
     # plugins = with pkgs; [
@@ -23,6 +26,7 @@
     #   }
     # ];
     reverseSplit = true;
-    shortcut = "b";
+    # shortcut = "b";
+    # prefix = "M-C-t";
   };
 }

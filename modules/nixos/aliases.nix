@@ -20,5 +20,6 @@
     ncpoweroff = "sudo systemctl poweroff";
 
     st-patrimoine = "~/bin/open-neovide.sh /var/lib/www/staging.st-patrimoine.com";
+    project-bwp = "kitty --session bwp & disown";
   };
 }

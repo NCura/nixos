@@ -12,6 +12,7 @@
     # html
     # jsonls
     lua-language-server
+    marksman
     nil
     sqls
     tailwindcss-language-server
@@ -20,6 +21,7 @@
     ### DAP
 
     ### Linter
+    markdownlint-cli
 
     ### Formatters
     # HTML

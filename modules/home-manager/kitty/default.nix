@@ -14,8 +14,8 @@
       # background_opacity = "1.00";
     };
     keybindings = {
-      "ctrl+c" = "copy_or_interrupt";
-      "ctrl+v" = "paste_from_clipboard";
+      "ctrl+alt+c" = "copy_or_interrupt";
+      "ctrl+alt+v" = "paste_from_clipboard";
 
       "ctrl+q" = "close_window";
       "ctrl+shift+r" = "start_resizing_window";
@@ -29,10 +29,10 @@
       # "ctrl+j" = "neighboring_window down";
       # "ctrl+k" = "neighboring_window up";
       # "ctrl+l" = "neighboring_window right";
-      # "ctrl+alt+h" = "kitten pass_keys.py left ctrl+h";
-      # "ctrl+alt+j" = "kitten pass_keys.py bottom ctrl+j";
-      # "ctrl+alt+k" = "kitten pass_keys.py top ctrl+k";
-      # "ctrl+alt+l" = "kitten pass_keys.py right ctrl+l";
+      "ctrl+alt+h" = "kitten pass_keys.py left ctrl+h";
+      "ctrl+alt+j" = "kitten pass_keys.py bottom ctrl+j";
+      "ctrl+alt+k" = "kitten pass_keys.py top ctrl+k";
+      "ctrl+alt+l" = "kitten pass_keys.py right ctrl+l";
       "ctrl+n" = "new_window";
 
       "f5" = "launch --location=hsplit";

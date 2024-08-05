@@ -35,6 +35,7 @@
   webTools = with pkgs; [
     filezilla
     nmap
+    postman
   ];
 
   others = with pkgs; [

@@ -151,6 +151,10 @@ return {
 				},
 			})
 
+			lspconfig.marksman.setup({
+				capabilities = capabilities,
+			})
+
 			lspconfig.nil_ls.setup({
 				capabilities = capabilities,
 			})
@@ -196,6 +200,7 @@ return {
 
 			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
+				filetypes = { "html", "php", "css", "sass", "scss", "javascript", "rust" },
 			})
 		end,
 	},
