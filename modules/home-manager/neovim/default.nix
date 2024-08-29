@@ -15,7 +15,6 @@
     marksman
     nil
     sqls
-    tailwindcss-language-server
     vscode-langservers-extracted
 
     ### DAP

@@ -9,6 +9,7 @@
   ides = with pkgs; [
     vscode
     sublime4
+    jetbrains.rust-rover
   ];
 
   myPrograms = with pkgs; [

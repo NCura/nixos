@@ -1,12 +1,12 @@
 return {
 	"catppuccin/nvim",
-	lazy = false,
 	name = "catppuccin",
 	priority = 1000,
 	config = function()
 		require("catppuccin").setup({
+			flavour = "mocha",
 			color_overrides = {
-				all = {
+				mocha = {
 					base = "#171717", -- base00
 					mantle = "#1e1e1e", -- base01
 					surface0 = "#212121", -- base02
@@ -26,13 +26,13 @@ return {
 				},
 			},
 		})
-
-		vim.cmd.colorscheme("catppuccin-mocha")
+		--
+		vim.cmd.colorscheme("catppuccin")
 		-- Hide semantic highlights for functions
-		vim.api.nvim_set_hl(0, "@lsp.type.function", {})
-		-- Hide all semantic highlights
-		for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
-			vim.api.nvim_set_hl(0, group, {})
-		end
+		-- vim.api.nvim_set_hl(0, "@lsp.type.function", {})
+		-- -- Hide all semantic highlights
+		-- for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+		-- 	vim.api.nvim_set_hl(0, group, {})
+		-- end
 	end,
 }
