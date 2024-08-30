@@ -55,6 +55,7 @@
     synergy
     wineWowPackages.waylandFull
     bazecor
+    trashy
   ];
 
   fonts.packages = with pkgs; [
