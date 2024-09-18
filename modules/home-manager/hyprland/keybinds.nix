@@ -6,7 +6,7 @@
       # MOD
       # --------------------------------------------------------
 
-      "$mod, Q, killactive,"
+      # "$mod, Q, killactive,"
       "$mod, W, exec, pkill -SIGUSR1 waybar"
       "$mod, E, exec, pypr toggle ranger && hyprctl dispatch bringactivetotop"
       "$mod, R, exec, rofi -show drun"
@@ -86,7 +86,7 @@
       # MOD + CONTROL + ALT
       # --------------------------------------------------------
 
-      # "$mod CONTROL ALT, Q, exec, "
+      "$mod CONTROL ALT, Q, killactive, "
       # "$mod CONTROL ALT, W, exec, "
       "$mod CONTROL ALT, E, exec, rofi -modi emoji -show emoji"
       # "$mod CONTROL ALT, R, exec, "

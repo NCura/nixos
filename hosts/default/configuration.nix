@@ -58,6 +58,13 @@
       "8.8.8.8"
       "8.8.4.4"
     ];
+    firewall.allowedTCPPorts = [3000];
+    # firewall.extraCommands = ''
+    #   iptables -A INPUT -p tcp --dport 3000 -s 192.168.1.42 -j ACCEPT
+    #   iptables -A INPUT -p tcp --dport 3000 -s 192.168.1.54 -j ACCEPT
+    #   iptables -A INPUT -p tcp --dport 3000 -s 192.168.1.73 -j ACCEPT
+    #   iptables -A INPUT -p tcp --dport 3000 -j DROP
+    # '';
   };
 
   nix = {

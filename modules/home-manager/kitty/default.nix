@@ -17,7 +17,8 @@
       "ctrl+alt+c" = "copy_or_interrupt";
       "ctrl+alt+v" = "paste_from_clipboard";
 
-      "ctrl+q" = "close_window";
+      "ctrl+alt+q" = "close_window";
+      "ctrl+q" = "";
       "ctrl+shift+r" = "start_resizing_window";
       "ctrl+t" = "move_window_to_top";
       "ctrl+f" = "move_window_forward";

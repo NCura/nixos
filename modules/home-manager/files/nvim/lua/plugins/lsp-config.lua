@@ -199,6 +199,7 @@ return {
 				settings = {
 					["rust-analyzer"] = {
 						cargo = {
+							allFeatures = true,
 							features = { "all" },
 							buildScripts = {
 								enable = true,
@@ -216,6 +217,9 @@ return {
 								["napi-derive"] = { "napi" },
 								["async-recursion"] = { "async_recursion" },
 							},
+						},
+						rustfmt = {
+							overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
 						},
 					},
 				},

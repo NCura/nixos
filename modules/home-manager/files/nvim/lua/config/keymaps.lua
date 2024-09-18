@@ -127,8 +127,9 @@ end, "Next buffer in Harpoon list")
 --------------------------------------------------------------------------------------------------------
 ----------------------------------------------- <C-A> --------------------------------------------------
 --------------------------------------------------------------------------------------------------------
-map_n("<C-A-Tab>", ":bprevious<CR>", "Previous buffer")
-map_n("<C-A-a>", ":b#<CR>", "Go to previous buffer")
+map_n("<C-A-Tab>", ":b#<CR>", "Previous buffer")
+-- map_n("<C-A-Tab>", ":bprevious<CR>", "Previous buffer")
+map_n("<C-A-a>", ":bprevious<CR>", "Go to previous buffer")
 map_n("<C-A-s>", ":wall<CR>", "Save all files")
 map_n("<C-A-g>", ":LazyGit<CR>", "Toggle LazyGit")
 map_n("<C-A-t>", ":Neotree toggle<CR>", "Toggle neotree")

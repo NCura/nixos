@@ -14,6 +14,8 @@
 
     ".." = "cd ..";
     cat = "bat";
+    # history = "history | fzf --layout reverse --height 50% --border --tac | awk {$1=\"\"; print substr($0,2)}' | wl-copy";
+    history = "history | fzf --layout=reverse --height=50% --border --tac | awk '{\$1=\"\"; print substr(\$0,2)}' | wl-copy";
 
     ncsleep = "sudo systemctl suspend";
     ncreboot = "sudo systemctl reboot";

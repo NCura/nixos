@@ -8,7 +8,7 @@
     package = pkgs.rofi-wayland;
     plugins = with pkgs; [
       (pkgs.rofi-calc.override {rofi-unwrapped = rofi-wayland-unwrapped;})
-      (pkgs.rofi-emoji.override {rofi-unwrapped = rofi-wayland-unwrapped;})
+      # (pkgs.rofi-emoji.override {rofi-unwrapped = rofi-wayland-unwrapped;})
       rofi-bluetooth
       # rofi-screenshot
       rofi-power-menu
