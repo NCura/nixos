@@ -29,6 +29,17 @@
           </Directory>
         '';
       };
+      "immo.com.local" = {
+        documentRoot = "/home/nicolas/projects/wordpress/immo.com";
+        extraConfig = ''
+          DirectoryIndex index.php
+          <Directory "/home/nicolas/projects/wordpress/immo.com">
+            AllowOverride All
+            Require all granted
+            Options +FollowSymLinks
+          </Directory>
+        '';
+      };
       "staging.st-patrimoine.com.local" = {
         documentRoot = "/var/lib/www/staging.st-patrimoine.com";
         extraConfig = ''
@@ -69,6 +80,7 @@
     "127.0.0.1" = [
       "staging.nicolascura.com.local"
       "staging.st-patrimoine.com.local"
+      "immo.com.local"
       "test-wordpress.com.local"
     ];
   };
