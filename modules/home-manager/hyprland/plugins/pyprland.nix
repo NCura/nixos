@@ -19,7 +19,8 @@
 
     [scratchpads.chat]
     animation = "fromTop"
-    command = "chromium --class chat --app=https://chat.openai.com"
+    # command = "chromium --class chat --app=https://chat.openai.com"
+    command = "kitty --class chat"
     class = "chat"
     size = "33% 75%"
 

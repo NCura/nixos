@@ -32,8 +32,6 @@
     wlr-randr
     ripgrep
     sshfs
-    php83
-    php
     lazygit
     ripgrep
     v4l-utils
@@ -56,6 +54,7 @@
     wineWowPackages.waylandFull
     bazecor
     trashy
+    devenv
   ];
 
   fonts.packages = with pkgs; [

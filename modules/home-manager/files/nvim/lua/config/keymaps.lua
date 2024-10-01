@@ -48,7 +48,13 @@ map_n("-", require("oil").toggle_float)
 ----------------------------------------------- <leader> -----------------------------------------------
 --------------------------------------------------------------------------------------------------------
 map_n("<Esc>", "<cmd>nohlsearch<CR>")
-map_n("<leader><leader>", telescope_builtin.buffers, "[ ] Find existing buffers")
+map_n("<leader><leader>", function()
+	telescope_builtin.buffers({
+		initial_mode = "normal",
+		sort_mru = true,
+		-- sort_lastused = true,
+	})
+end, "[ ] Find existing buffers")
 map_v("<leader>/", "y/\\V<C-R>=escape(@\",'/\\')<CR><CR>", "Search selection")
 
 map_n("<leader>q", vim.diagnostic.setloclist, "Open diagnostic [Q]uickfix list")

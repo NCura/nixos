@@ -4,6 +4,11 @@
     package = pkgs.mariadb;
   };
 
+  environment.systemPackages = with pkgs; [
+    php83
+    php
+  ];
+
   services.httpd = {
     enable = true;
     enablePHP = true;
@@ -67,6 +72,7 @@
         extraConfig = ''
           DirectoryIndex index.php
           <Directory "/var/lib/www/test-wordpress.com">
+
             AllowOverride All
             Require all granted
             Options +FollowSymLinks
