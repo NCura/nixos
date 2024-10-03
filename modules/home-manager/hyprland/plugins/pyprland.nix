@@ -29,5 +29,11 @@
     command = "obsidian --class obsidian"
     class = "obsidian"
     size = "33% 75%"
+
+    [scratchpads.obsidian-nvim]
+    animation = "fromTop"
+    command = "kitty --class obsidian-nvim -e nvim ~/Documents/Obsidian/Core"
+    class = "obsidian-nvim"
+    size = "33% 75%"
   '';
 }

@@ -14,8 +14,8 @@
       # "$mod, Y, ,"
       # "$mod, U, ,"
       "$mod, I, exec, vivaldi"
-      "$mod, O, exec, pypr toggle obsidian && hyprctl dispatch bringactivetotop"
-      # "$mod, P, ,"
+      "$mod, O, exec, pypr toggle obsidian-nvim && hyprctl dispatch bringactivetotop"
+      "$mod, P, exec, pypr toggle obsidian && hyprctl dispatch bringactivetotop"
 
       # "$mod, code:23, ,"
       "$mod, A, exec, web-search"
