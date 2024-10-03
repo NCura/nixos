@@ -4,6 +4,9 @@
     lss = "eza --icons --all --across --group-directories-first";
     lsl = "eza --icons --header --all --long --group-directories-first";
 
+    cd = "__zoxide_z";
+    cdi = "__zoxide_zi";
+
     grep = "grep --color=auto";
 
     nr = "sudo nixos-rebuild switch --flake ~/nixos/#default";
