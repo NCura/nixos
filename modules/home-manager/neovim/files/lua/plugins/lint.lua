@@ -3,8 +3,13 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
+		local markdonlint = require("lint.linters.markdownlint-cli2")
+		-- local markdonlint = require("lint").linters["markdownlint-cli2"]
+		markdonlint.args = {
+			"--config ~/.config/nvim/lua/config/.markdownlint.json",
+		}
 		lint.linters_by_ft = {
-			markdown = { "markdownlint" },
+			-- markdown = { "markdownlint-cli2" },
 		}
 
 		-- To allow other plugins to add linters to require('lint').linters_by_ft,

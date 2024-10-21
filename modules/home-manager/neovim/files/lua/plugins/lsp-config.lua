@@ -119,6 +119,17 @@ return {
 				end,
 			})
 
+			-- Show line diagnostics automatically in hover window
+			-- You will likely want to reduce updatetime which affects CursorHold
+			-- note: this setting is global and should be set only once
+			-- vim.o.updatetime = 250
+			-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+			-- 	group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+			-- 	callback = function()
+			-- 		vim.diagnostic.open_float(nil, { focus = false })
+			-- 	end,
+			-- })
+
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			local lspconfig = require("lspconfig")
@@ -229,9 +240,13 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.tailwindcss.setup({
+			-- lspconfig.tailwindcss.setup({
+			-- 	autostart = "false",
+			-- 	capabilities = capabilities,
+			-- 	filetypes = { "html", "php", "css", "sass", "scss", "javascript", "rust" },
+			-- })
+			lspconfig.typos_lsp.setup({
 				capabilities = capabilities,
-				filetypes = { "html", "php", "css", "sass", "scss", "javascript", "rust" },
 			})
 		end,
 	},

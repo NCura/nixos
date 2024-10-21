@@ -26,5 +26,6 @@
 
     st-patrimoine = "~/bin/open-neovide.sh /var/lib/www/staging.st-patrimoine.com";
     project-bwp = "kitty --session bwp & disown";
+    obsidian = "nvim ~/Documents/Obsidian/Core";
   };
 }

@@ -37,7 +37,6 @@
     filezilla
     nmap
     postman
-    surrealist
   ];
 
   others = with pkgs; [

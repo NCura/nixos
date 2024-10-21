@@ -9,6 +9,7 @@
            fi
     '';
     bashrcExtra = ''
+           set -o vi
       # All shells
            if [ -f $HOME/.ssh/github ]; then
              eval "$(ssh-agent -s)" > /dev/null

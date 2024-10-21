@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/nicolas/nixos/modules/home-manager/files/nvim";
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/nicolas/nixos/modules/home-manager/neovim/files";
 
   home.packages = with pkgs; [
     ### Language servers
@@ -16,11 +16,13 @@
     nil
     sqls
     vscode-langservers-extracted
+    typos-lsp
 
     ### DAP
 
     ### Linter
     markdownlint-cli
+    markdownlint-cli2
 
     ### Formatters
     # HTML
